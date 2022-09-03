@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Desencriptador</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <img src="Img/Logo.png" alt="Logo" id="logo">
+  </header>
+    <div class="flexcon">
+      <div class="Encriptador">
+        <textarea name="Texto" id="Texto" placeholder="Ingrese su texto aqui" autocomplete="off"></textarea>
+        <div class="botones1">
+          <p id="info">&#128712 Solo valido para letras minusculas sin acento</p>
+          <button class="boton" id="encriptar" onclick="encriptar()">Encriptar</button>
+          <button class="boton" id="desencriptar" onclick="desencriptar()">Desencriptar</button>
+        </div>
+      </div>
+      <div class="Resultados">
+        <textarea name="tex" id="resultado" placeholder="No se ha encontrado texto" readonly></textarea>
+        <div class="botones1">
+          <button class="boton" id="copy">Copiar</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      function encriptar() {
+        let x = document.getElementById("Texto").value;
+        let y =x.replaceAll("e", "enter");
+        y= y.replaceAll("i","imes");
+        y=y.replaceAll("a","ai");
+        y=y.replaceAll("o","ober");
+        y=y.replaceAll("u","ufat");
+        document.getElementById("resultado").innerHTML = y;
+      }
+      function desencriptar() {
+        let x = document.getElementById("Texto").value;
+        let y =x.replaceAll("ufat", "u");
+        y= y.replaceAll("ober","o");
+        y=y.replaceAll("ai","a");
+        y=y.replaceAll("imes","i");
+        y=y.replaceAll("enter","e");
+        document.getElementById("resultado").innerHTML = y;
+      }
+      function copy() {
+        let copyText = document.querySelector("#resultado");
+        copyText.select();
+        document.execCommand("copy");
+      }
+      document.querySelector("#copy").addEventListener("click", copy);
+    </script>
+ </body>
+</html>

@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+}
+body{
+	background-color:#E7F2F8; 
+}
+.flexcon{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 30px;
+    text-align: center;
+    margin-left: 100px;
+
+}
+.Encriptador{
+	padding: 10px;
+	padding: 10px;
+    flex: 60%;
+    height: 700px;
+    position: relative;
+}
+ .Resultados{
+    background-color:white;
+    padding: 10px;
+    flex: 40%;
+    height: 700px;
+    position: relative;
+    border-radius: 32px;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+   border-radius: 32px;
+ }
+.boton{
+    text-align:center; 
+    padding:11px 35px; 
+    margin-top: 10px;
+    margin-bottom: 40px;
+    border:solid 1px #004F72; 
+    border-radius: 25px; 
+    font:18px "Lucida Console", Monaco, monospace; 
+    font-weight:bold; 
+    color:#ffffff; 
+    background:#ffa384; 
+
+  }
+ .boton:hover{
+ 	background-color: #ff8c66;
+ }
+ .botones1{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+ }
+ #Texto{
+    background-color:#E7F2F8; 
+ 	color: #378595;
+	border: none;	
+	font-weight: bold;
+	font-size: 2em;
+	width: 100%;
+	height: 70%;
+    resize: none;
+ }
+ #resultado{
+    width: 100%;
+    height: 80%; 
+    border: none;   
+    font-size: 30px;
+    resize: none;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+ }
+ #resultado:focus{
+    background-image: none;
+ }
+ #info{
+    font-size: 12px;
+    color: #495057;
+    opacity: 0.8;
+ }
+ #copy{
+    margin-bottom: 10px;
+ }
+ #logo{
+    margin-left: 0px;
+ }
+
+ @media (max-width: 1200px) {
+  .flex-item-right, .flex-item-left {
+    flex: 100%;
+  }
+  .Encriptador{
+   height: 500px;
+   font-size: 1em;
+   flex: 800px;
+  }
+  .Resultados{
+   flex: 500px;
+   font-size: 1em;
+   height: 100px;
+   margin-left: 5%;
+   margin-right: 5%;
+   margin-bottom: 5%;
+  }
+  .flexcon{
+       flex-direction: column;
+       flex-wrap: wrap;
+       margin-left: 0px;
+  }
+  #resultado{
+   background-image: none;
+  }
+  .boton{
+   width: 40%;
+   font-size: 15px;
+  }
+}
