@@ -1,0 +1,76 @@
+/*
+Not required by cyberpunk-css! 
+Just for the purpose of this demo page.
+
+Custom css rules.
+*/
+
+    #header
+    {
+        padding-left: 16px !important;
+        padding-bottom: 8px !important;
+    }
+
+    #header-css
+    {
+        padding-left: 24px !important;
+    }
+
+    #colors .col
+    {
+        padding: 8px !important;
+    }
+
+    .cyber-tile,
+    .cyber-tile-big,
+    .cyber-tile-small
+    {
+        margin-right: 0 !important;
+    }
+    #contenedor {
+        display: flex;
+    }
+    #contenedor3 {
+        display: flex;
+    }
+    #human {
+        flex: 0 0 20%; /* Ancho del 20%, sin crecer ni encoger */
+    }
+    #weapons {
+        flex: 0 0 70%; /* Ancho del 20%, sin crecer ni encoger */
+    }
+    #div1 {
+        flex: 0 0 20%; /* Ancho del 20%, sin crecer ni encoger */
+    }
+    #div2 {
+        flex: 0 0 10%; /* Ancho del 60%, sin crecer ni encoger */
+    }
+    #div3{
+        flex:0 0 65%;
+    }
+    .stats {
+            font-size: 1.5em; /* Puedes ajustar este valor según tus preferencias */
+    }
+    .stats2 {
+            font-size: 1.5em; /* Puedes ajustar este valor según tus preferencias */
+            text-align: center;
+    }
+    #contenedor2 {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .columna {
+            flex: 1;
+            padding:3%;
+        }
+table{
+            margin: auto
+}
+tr:first-child {
+            background-color: black;
+            color: #f8ef02;
+        }
+
+
+
