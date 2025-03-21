@@ -1,0 +1,100 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Press Start 2P', cursive; /* Fuente eléctrica */
+    background-image: url('fondo5.jpg'); /* Cambiar el fondo a la imagen fondo.jpg */
+    background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+    background-position: center; /* Centrar la imagen de fondo */
+    color: #e8e8ff; /* Color de texto más claro */
+    text-shadow: 
+        0 0 5px #e8e8ff, 
+        0 0 10px #e8e8ff, 
+        0 0 15px #cd5c9a, /* Color más brillante para el efecto de neón */
+        0 0 20px #cd5c9a, 
+        0 0 30px #cd5c9a, 
+        0 0 40px #cd5c9a; /* Sombra de texto para todo el documento */
+}
+
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+        opacity: 1;
+    }
+    20% {
+        transform: translate(-2px, 2px);
+        opacity: 0.8;
+    }
+    40% {
+        transform: translate(2px, -2px);
+        opacity: 0.6;
+    }
+    60% {
+        transform: translate(-2px, 2px);
+        opacity: 0.4;
+    }
+    80% {
+        transform: translate(2px, -2px);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+.main-div {
+    text-align: center;
+    margin-bottom: 50px; /* Espaciado entre el div principal y los divs secundarios */
+    padding: 20px;
+    animation: glitch 1s infinite; /* Aplicar la animación de glitch continuamente */
+}
+
+.container {
+    display: grid; /* Usar grid para el contenedor */
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+    gap: 10px; /* Espaciado entre los child-divs */
+    width: 100%; /* Asegurarse de que el contenedor ocupe todo el ancho */
+    max-width: 800px; /* Limitar el ancho para adaptarse a la pantalla */
+    margin: 0 auto; /* Centrar el contenedor en la página */
+}
+
+.child-div {
+    background: transparent; /* Sin fondo */
+    padding: 15px; /* Padding simétrico */
+    display: flex; /* Usar flexbox para alinear contenido */
+    flex-direction: column; /* Alinear los elementos en columnas */
+    justify-content: space-between; /* Espacio uniforme entre elementos */
+    min-width: 200px; /* Ancho mínimo para asegurar espacio para el texto */
+}
+
+.child-div h2, .child-div p {
+    margin: 0 0 10px; /* Margen inferior para el título */
+}
+
+.child-div ul {
+    list-style-type: none; /* Quitar las viñetas de la lista */
+    padding: 0; /* Quitar el padding por defecto */
+    margin: 0; /* Quitar el margen por defecto */
+    text-align: left; /* Alinear el texto a la izquierda */
+}
+
+.link {
+    color: #ffffff; /* Color de texto más claro para los enlaces */
+    text-decoration: none; /* Quitar subrayado de los enlaces */
+    display: block; /* Hacer que el enlace ocupe el bloque completo */
+    padding: 7px; /* Espaciado alrededor del texto */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave */
+    /* background: rgba(0, 0, 0, 0.5); Fondo oscuro semitransparente para mejorar la visibilidad */
+    border-radius: 4px; /* Bordes redondeados para un aspecto más elegante */
+    text-shadow: 0 0 4px #00FFFF; /* Sombra más pequeña para los enlaces */
+}
+
+.link:hover {
+    background-color: rgba(255, 0, 255, 0.5); /* Cambiar el fondo al pasar el ratón */
+    color: #ffffff; /* Cambiar el color del texto a blanco al pasar el ratón */
+    animation: glitch 0.5s ease-in-out; /* Añadir la animación de glitch solo en hover */
+}
