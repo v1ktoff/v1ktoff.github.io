@@ -1,0 +1,340 @@
+/* ==========================================
+ *   ESTILO AERO - Windows Vista/7 Glass UI
+ *   ========================================== */
+
+/* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    font-family: 'Segoe UI', 'Calibri', 'Open Sans', sans-serif;
+    /* Fondo estilo Aero - Aurora boreal abstracta */
+    background:
+    linear-gradient(135deg,
+                    rgba(0, 100, 150, 0.3) 0%,
+                    rgba(100, 180, 220, 0.2) 25%,
+                    rgba(180, 220, 255, 0.15) 50%,
+                    rgba(100, 180, 220, 0.2) 75%,
+                    rgba(0, 100, 150, 0.3) 100%),
+                    url('https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1920&q=80') no-repeat center center fixed;
+                    background-size: cover;
+                    color: #1a1a1a;
+                    overflow-x: hidden;
+}
+
+/* ==========================================
+ *   PANEL DE VIDRIO PRINCIPAL (Glass Panel)
+ *   ========================================== */
+.main-div {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px 50px;
+
+    /* Efecto Glassmorphism */
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.25) 0%,
+                                rgba(255, 255, 255, 0.15) 50%,
+                                rgba(255, 255, 255, 0.1) 100%
+    );
+    backdrop-filter: blur(20px) saturate(150%);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+
+    /* Borde brillante estilo Aero */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+
+    /* Sombras para efecto flotante */
+    box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+
+    /* Brillo superior (Gloss) */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Brillo superior (gloss effect) */
+.main-div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.35) 0%,
+                                rgba(255, 255, 255, 0.1) 100%
+    );
+    border-radius: 15px 15px 0 0;
+    pointer-events: none;
+}
+
+/* Texto del título */
+.main-div h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #ffffff;
+    text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(121, 194, 236, 0.5);
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.main-div p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    font-weight: 300;
+}
+
+/* ==========================================
+ *   CONTENEDOR DE TARJETAS
+ *   ========================================== */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+    padding: 20px;
+}
+
+/* ==========================================
+ *   TARJETAS DE VIDRIO (Glass Cards)
+ *   ========================================== */
+.child-div {
+    /* Fondo de vidrio con gradiente */
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.2) 0%,
+                                rgba(255, 255, 255, 0.1) 100%
+    );
+    backdrop-filter: blur(15px) saturate(120%);
+    -webkit-backdrop-filter: blur(15px) saturate(120%);
+
+    /* Bordes */
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+
+    /* Padding y layout */
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 180px;
+
+    /* Sombras flotantes */
+    box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+
+    /* Transición suave */
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Brillo superior en tarjetas */
+.child-div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.25) 0%,
+                                rgba(255, 255, 255, 0.05) 100%
+    );
+    border-radius: 12px 12px 0 0;
+    pointer-events: none;
+}
+
+/* Efecto hover en tarjetas */
+.child-div:hover {
+    transform: translateY(-5px);
+    box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    0 0 30px rgba(121, 194, 236, 0.3);
+    border-color: rgba(121, 194, 236, 0.6);
+}
+
+/* Título de la tarjeta */
+.child-div p {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #ffffff;
+    text-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.3),
+    0 0 10px rgba(121, 194, 236, 0.4);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+/* ==========================================
+ *   LISTAS DE ENLACES
+ *   ========================================== */
+.child-div ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.child-div ul li {
+    margin-bottom: 8px;
+}
+
+/* ==========================================
+ *   ENLACES ESTILO AERO
+ *   ========================================== */
+.link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 400;
+
+    /* Fondo sutil para legibilidad */
+    background: rgba(0, 0, 0, 0.15);
+    border: 1px solid transparent;
+
+    /* Transición */
+    transition: all 0.25s ease;
+
+    /* Sombra de texto */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.link:hover {
+    /* Efecto Aero: brillo y color */
+    background: linear-gradient(
+        180deg,
+        rgba(121, 194, 236, 0.4) 0%,
+                                rgba(80, 150, 200, 0.3) 100%
+    );
+    border-color: rgba(121, 194, 236, 0.5);
+    color: #ffffff;
+
+    /* Efecto de resplandor */
+    box-shadow:
+    0 0 15px rgba(121, 194, 236, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+
+    /* Transformación sutil */
+    transform: translateX(5px);
+
+    /* Sombra de texto brillante */
+    text-shadow:
+    0 0 10px rgba(255, 255, 255, 0.5),
+    0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.link:active {
+    /* Efecto de presión */
+    background: linear-gradient(
+        180deg,
+        rgba(60, 120, 170, 0.5) 0%,
+                                rgba(80, 140, 190, 0.4) 100%
+    );
+    transform: translateX(2px);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================
+ *   EFECTOS ADICIONALES
+ *   ========================================== */
+
+/* Animación de entrada suave */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.main-div {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.child-div {
+    animation: fadeInUp 0.6s ease-out;
+    animation-fill-mode: both;
+}
+
+/* Retraso en la animación de cada tarjeta */
+.child-div:nth-child(1) { animation-delay: 0.1s; }
+.child-div:nth-child(2) { animation-delay: 0.2s; }
+.child-div:nth-child(3) { animation-delay: 0.3s; }
+.child-div:nth-child(4) { animation-delay: 0.4s; }
+.child-div:nth-child(5) { animation-delay: 0.5s; }
+
+/* ==========================================
+ *   RESPONSIVE DESIGN
+ *   ========================================== */
+@media (max-width: 768px) {
+    .main-div {
+        padding: 20px 30px;
+        margin-bottom: 30px;
+    }
+
+    .main-div h1 {
+        font-size: 1.8rem;
+    }
+
+    .container {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .child-div {
+        padding: 20px 15px;
+        min-height: 150px;
+    }
+
+    .child-div p {
+        font-size: 1.1rem;
+    }
+
+    /* Reducir blur en móviles para rendimiento */
+    .main-div, .child-div {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+}
+
+/* ==========================================
+ *   COMPATIBILIDAD CON NAVEGADORES ANTIGUOS
+ *   ========================================== */
+@supports not (backdrop-filter: blur(10px)) {
+    .main-div, .child-div {
+        background: rgba(255, 255, 255, 0.15);
+    }
+}
