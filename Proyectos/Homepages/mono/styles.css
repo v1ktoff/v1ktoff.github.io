@@ -1,0 +1,108 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    -webkit-font-smoothing: antialiased;
+}
+
+.main-header {
+    text-align: left; /* Alineación a la izquierda para romper la simetría obvia y darle un aire más editorial */
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 70px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.main-header h1 {
+    font-size: 1.8rem; /* Tamaño más contenido, más sofisticado */
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    margin: 0 0 8px 0;
+    color: #000000;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #888888;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px 40px; /* Más espacio vertical entre filas */
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .container { grid-template-columns: repeat(2, 1fr); }
+    .main-header { text-align: center; }
+}
+@media (max-width: 480px) {
+    .container { grid-template-columns: 1fr; }
+}
+
+.child-div {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #000000; /* Línea negra sólida y delgada, diseño constructivista */
+    padding-top: 15px;
+}
+
+.div-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 20px;
+}
+
+.index-num {
+    font-family: monospace; /* Fuente de máquina/código para el contraste técnico */
+    font-size: 0.75rem;
+    color: #888888;
+}
+
+.category-title {
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #000000;
+    margin: 0;
+}
+
+.child-div ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.link {
+    color: #777777;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 300;
+    display: block;
+    padding: 5px 0;
+    transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.link:hover {
+    color: #000000;
+    padding-left: 6px; /* Desplazamiento limpio en lugar de transform, se siente más fluido con el texto */
+}
