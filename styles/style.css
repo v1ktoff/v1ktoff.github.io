@@ -1,0 +1,239 @@
+/* =============================================================================
+ *  v1ktoff // Webspace - Core Stylesheet
+ *  Estética retro-arcade de 8 bits y terminal UNIX clásica.
+ *  ============================================================================= */
+
+/* Importar fuente estilo 8-bits desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Reset básico del navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+    color: #ff0000; /* Verde terminal (#00ff00) o Ámbar (#ffb000) también quedan excelentes */
+    font-family: 'Press Start 2P', monospace;
+    font-size: 11px;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Encabezado y contenedor de Arte ASCII */
+header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.ascii-art {
+    font-family: monospace; /* Forzar monospace estándar para que no se deforme el logo */
+    font-size: 9px;
+    line-height: 1.2;
+    white-space: pre;
+    display: inline-block;
+    text-align: left;
+    color: #ff0000;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+/* Contenedor Principal (Layout de 3 columnas estilo Web 1.0) */
+.main-container {
+    display: flex;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+/* 1. BARRA DE NAVEGACIÓN (Izquierda) */
+nav {
+    flex: 1;
+    max-width: 220px;
+    border: 2px dashed #ff0000;
+    padding: 15px;
+    background: #050000;
+}
+
+nav h3 {
+    font-size: 12px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    border-bottom: 2px dashed #ff0000;
+    padding-bottom: 5px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    margin-bottom: 12px;
+}
+
+nav ul li a {
+    color: #ff0000;
+    text-decoration: none;
+    display: block;
+    padding: 4px;
+}
+
+nav ul li a:hover {
+    background-color: #ff0000;
+    color: #000000;
+}
+
+/* 2. ÁREA DE CONTENIDO CENTRAL (Main) */
+main {
+    flex: 3;
+    border: 2px solid #ff0000;
+    padding: 20px;
+    min-height: 500px;
+    background: #020000;
+}
+
+main h2 {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #ff0000;
+}
+
+/* Estructura de Tarjetas (Cards) para Proyectos y Habilidades */
+.project-card {
+    border: 2px solid #ff0000;
+    margin-bottom: 20px;
+    background-color: #000000;
+}
+
+.project-header {
+    background-color: #ff0000;
+    color: #000000;
+    padding: 6px 10px;
+    font-weight: bold;
+    font-size: 10px;
+}
+
+.project-body {
+    padding: 15px;
+}
+
+.project-meta {
+    color: #880000;
+    font-size: 9px;
+    margin-bottom: 10px;
+}
+
+.project-link {
+    color: #ff0000;
+    text-decoration: none;
+    font-size: 9px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+    background-color: #ff0000;
+    color: #000000;
+}
+
+/* 3. BARRA LATERAL DE WIDGETS (Derecha) */
+aside {
+    flex: 1.2;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.widget {
+    border: 2px solid #ff0000;
+    padding: 15px;
+    background: #050000;
+}
+
+.widget-title {
+    font-size: 10px;
+    background: #ff0000;
+    color: #000000;
+    padding: 3px 6px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Globo ASCII Dinámico */
+.globe-container {
+    font-family: monospace; /* Obligatorio para preservar ancho estricto de caracteres */
+    font-size: 9px;
+    line-height: 1;
+    text-align: center;
+    white-space: pre;
+    color: #ff0000;
+    filter: drop-shadow(0 0 3px rgba(255, 0, 0, 0.4));
+    margin: 5px 0;
+}
+
+/* Reproductor Winamp Falso */
+.marquee-container {
+    border: 1px solid #ff0000;
+    padding: 4px;
+    background: #000000;
+    margin-bottom: 10px;
+}
+
+.marquee-container marquee {
+    font-family: monospace;
+    font-size: 11px;
+}
+
+.player-buttons {
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+}
+
+.player-btn {
+    background: #000000;
+    color: #ff0000;
+    border: 1px solid #ff0000;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 8px;
+    padding: 6px;
+    cursor: pointer;
+    flex: 1;
+}
+
+.player-btn:hover {
+    background: #ff0000;
+    color: #000000;
+}
+
+/* Utilidades adicionales */
+.blink {
+    animation: step-end blink-animation 1s infinite;
+}
+
+@keyframes blink-animation {
+    50% { opacity: 0; }
+}
+
+.status-online {
+    color: #ff0000;
+    animation: step-end blink-animation 1.5s infinite;
+}
+
+.text-center { text-align: center; }
+.counter-box {
+    font-size: 16px;
+    border: 1px dashed #ff0000;
+    padding: 8px;
+    margin: 10px 0;
+    background: #000000;
+}
+.netscape-text {
+    font-size: 8px;
+    color: #550000;
+    margin-top: 5px;
+}

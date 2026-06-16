@@ -1,14 +1,208 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Index</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v1ktoff // Webspace</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-	<h1>Proyectos</h1>
-	<ul>
-		<li> <a href="https://v1ktoff.github.io/Documentos/Alura%20Challenge%20%2301/main.html"> Alura Challenge #01 </a></li>
-	</ul>
+
+    <header>
+        <div class="ascii-art">
+██╗   ██╗ ██╗██╗  ██╗████████╗ ██████╗ ███████╗███████╗
+██║   ██║███║██║ ██╔╝╚══██╔══╝██╔═══██╗██╔════╝██╔════╝
+██║   ██║╚██║█████╔╝    ██║   ██║   ██║█████╗  █████╗
+╚██╗ ██╔╝ ██║██╔═██╗    ██║   ██║   ██║██╔══╝  ██╔══╝
+ ╚████╔╝  ██║██║  ██╗   ██║   ╚██████╔╝██║     ██║
+  ╚═══╝   ╚═╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝     ╚═╝
+        </div>
+    </header>
+
+    <div class="main-container">
+
+        <nav>
+            <h3>Navegación</h3>
+            <ul>
+                <li><a href="#inicio">_inicio</a></li>
+                <li><a href="#acerca">_acerca_de_mi</a></li>
+                <li><a href="#proyectos">_proyectos</a></li>
+                <li><a href="#skills">_habilidades</a></li>
+                <li><a href="#contacto">_contacto</a></li>
+            </ul>
+        </nav>
+
+        <main id="content-area">
+
+            <section id="sec-inicio">
+                <h2>Bienvenido a mi terminal web <span class="blink">_</span></h2>
+                <p>Estás en mi rincón oscuro de la red. Soy un entusiasta de la informática, la geografía y de las picafresas.</p>
+                <br>
+                <p>Aquí suelo compilar mis proyectos, ideas sueltas y código que probablemente olvidaré la próxima semana.</p>
+                <br>
+                <p>Sírvete un café, abre una terminal de verdad y explora los enlaces de la izquierda.</p>
+            </section>
+
+            <section id="sec-acerca" style="display: none;">
+                <h2>[ /usr/bin/whoami ]</h2>
+                <p>Cargando perfil de usuario desde el sistema local...</p>
+                <br>
+
+                <div class="project-card">
+                    <div class="project-header">USER_PROFILE // IDENTIDAD</div>
+                    <div class="project-body">
+                        <p><strong>NOMBRE:</strong> Victor Gabriel Arredondo Dominguez (v1ktoff)</p>
+                        <p><strong>ESTADO:</strong> Estudiante de Tecnologías de la Información para la Ciencia @ UNAM</p>
+                        <p><strong>UBICACIÓN:</strong> Morelia, Michoacán, México</p>
+                        <p><strong>INTERESES:</strong> Ciencia de Datos Espaciales, Geointeligencia, Geociencias y Computación de Alto Rendimiento (HPC).</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">BACKGROUND // BIOGRAFÍA.TXT</div>
+                    <div class="project-body" style="line-height: 1.6;">
+                    <p>Estudie 6 semestres en la Facultad de Ciencias Físico Matemáticas de la UMSNH (antes de que la pandemia me obligara a recalcular la ruta), ahí aprendí a valorar que los algoritmos tengan un sustento matemático estricto en lugar de solo "correr". Actualmente curso el 7.º semestre de Tecnologías de la Información para la Ciencia en la ENES Morelia, UNAM, explorando la intersección de las matemáticas con las ciencias sociales y las ciencias computacionales.</p>
+                    <br>
+                    <p>Mi trabajo de tesis se enfoca en el desarrollo de agentes de Inteligencia Artificial diseñados para automatizar consultas y flujos de trabajo complejos sobre QGIS, buscando democratizar el uso de sistemas de información geográfica. En el ámbito del desarrollo y la innovación, gané el primer lugar en el hackathon InnovationFest 2025 del ICTI Michoacán con el proyecto AIGromex, un ecosistema digital que integra redes de confianza híbridas para optimizar dinámicas agrícolas.</p>
+                    </div>
+            </section>
+
+            <section id="sec-proyectos" style="display: none;">
+                <h2>[ /bin/proyectos ]</h2>
+                <p>Próximamente...</p>
+            </section>
+                        <!-- SECCIÓN: HABILIDADES -->
+            <section id="sec-skills" style="display: none;">
+                <h2>[ /bin/habilidades ]</h2>
+                <p>Especificaciones del sistema y módulos de desarrollo cargados en el entorno:</p>
+                <br>
+                <!-- Bloque 1: Lenguajes y Core Científico -->
+                <div class="project-card">
+                    <div class="project-header">CORE_SYSTEM // LENGUAJES Y CIENCIA DE DATOS</div>
+                    <div class="project-body">
+                        <p class="project-meta">Paquetes principales para análisis matemático y desarrollo de IA</p>
+                        <ul style="list-style-type: '- '; padding-left: 20px; font-size: 0.9rem;">
+                            <li><strong>Desarrollo Multilenguaje:</strong> Dominio y flexibilidad en diversos paradigmas de programación. Experiencia sólida en el ecosistema científico de Python, bajo nivel con C, y entornos empresariales/académicos en Java. Capacidad de adaptación inmediata a lenguajes específicos según los requerimientos del proyecto (experiencia práctica con Rust, Fortran y Lisp).</li><li><strong>Data Science Stack:</strong> Manipulación y modelado riguroso con NumPy, Pandas y SciPy.</li>
+                            <li><strong>IA & Agentes:</strong> Diseño de modelos lógicos y arquitecturas basadas en agentes inteligentes.</li>
+                            <li><strong>Modelado Matemático:</strong> Aplicación de fundamentos abstractos y estadísticos a dinámicas sociales.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Bloque 2: Geociencias y Datos Geofísicos -->
+                <div class="project-card">
+                    <div class="project-header">GEOSCIENCES // PROSPECCIÓN Y MATRICES GEOFÍSICAS</div>
+                    <div class="project-body">
+                        <p class="project-meta">Procesamiento, filtrado y modelado de métodos geofísicos crudos</p>
+                        <ul style="list-style-type: '- '; padding-left: 20px; font-size: 0.9rem;">
+                            <li><strong>Potenciales:</strong> Ingesta, corrección y análisis de anomalías en datos magnetométricos y gravimétricos.</li>
+                            <li><strong>Sísmica & Eléctricos:</strong> Procesamiento de señales sismológicas y modelado de perfiles eléctricos (tomografías de resistividad).</li>
+                            <li><strong>Electromagnetismo:</strong> Interpretación de matrices de datos electromagnéticos para caracterización del subsuelo.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Bloque 3: Herramientas Geoespaciales -->
+                <div class="project-card">
+                    <div class="project-header">SPATIAL_ENV // GEOPROCESAMIENTO Y PERCEPCIÓN REMOTA</div>
+                    <div class="project-body">
+                        <p class="project-meta">Librerías y software para análisis territorial y geointeligencia</p>
+                        <ul style="list-style-type: '- '; padding-left: 20px; font-size: 0.9rem;">
+                            <li><strong>QGIS:</strong> Automatización avanzada de flujos de trabajo e integración de consultas mediante código.</li>
+                            <li><strong>Geospatial Libraries:</strong> Manejo de geometría y formatos espaciales con GeoPandas, Shapely y Fiona.</li>
+                            <li><strong>Percepción Remota:</strong> Procesamiento de imágenes satelitales, coberturas de suelo y datos de edafología.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Bloque 4: Infraestructura y Entorno -->
+                <div class="project-card">
+                    <div class="project-header">SYS_ADMIN // INFRAESTRUCTURA Y ENTORNO LINUX</div>
+                    <div class="project-body">
+                        <p class="project-meta">Configuración de sistemas, alto rendimiento y automatización</p>
+                        <ul style="list-style-type: '- '; padding-left: 20px; font-size: 0.9rem;">
+                            <li><strong>HPC Systems:</strong> Montaje, configuración y administración de clústeres de computación de alto rendimiento para procesamiento masivo de datos.</li>
+                            <li><strong>GNU/Linux:</strong> Operación y administración avanzada del sistema operativo a nivel CLI (línea de comandos).</li>
+                            <li><strong>Control de Versiones:</strong> Gestión de entornos de desarrollo distribuidos mediante Git.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sec-contacto" style="display: none;">
+                <h2>[ /etc/contacto ]</h2>
+                <!-- Canales de Comunicación -->
+                    <div class="project-card">
+                        <div class="project-header">NETWORK_SOCKETS // PUNTOS DE ACCESO</div>
+                        <div class="project-body">
+                            <p class="project-meta">Direccionamiento y enlaces activos para transferencia de mensajes</p>
+                            <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; font-family: monospace;">
+                                <tr style="border-bottom: 1px dashed #333;">
+                                    <td style="padding: 8px 0; width: 30%;"><strong>[ EMAIL ]</strong></td>
+                                    <td style="padding: 8px 0;"><a href="mailto:vgarredo@outlook.es" class="project-link">vgarredo@outlook.es</a></td>
+                                </tr>
+                                <tr style="border-bottom: 1px dashed #333;">
+                                    <td style="padding: 8px 0;"><strong>[ GITHUB ]</strong></td>
+                                    <td style="padding: 8px 0;"><a href="https://github.com/v1ktoff" target="_blank" class="project-link">github.com/v1ktoff</a></td>
+                                </tr>
+                                <tr style="border-bottom: 1px dashed #333;">
+                                    <td style="padding: 8px 0;"><strong>[ LINKEDIN ]</strong></td>
+                                    <td style="padding: 8px 0;"><a href="https://www.linkedin.com/in/victor-gabriel-arredondo-dominguez-51346a248/" target="_blank" class="project-link">lhttps://www.linkedin.com/in/victor-gabriel-arredondo-dominguez-51346a248/</a></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px 0;"><strong>[ UBICACIÓN ]</strong></td>
+                                    <td style="padding: 8px 0; color: #888;">Morelia, Michoacán, México (19.7006° N, 101.1857° W)</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+            </section>
+
+        </main>
+
+        <aside>
+
+            <div class="widget">
+                <div class="widget-title">NOW PLAYING</div>
+                <div class="marquee-container">
+                    <marquee scrollamount="3">Crystal Castles - Empathy.mp3 [128kbps]</marquee>
+                </div>
+                <div class="player-buttons">
+                    <button class="player-btn" onclick="fakeAction('PREV')">■ REW</button>
+                    <button class="player-btn" onclick="fakeAction('PLAY')">► PLY</button>
+                    <button class="player-btn" onclick="fakeAction('PAUSE')">║ PAU</button>
+                    <button class="player-btn" onclick="fakeAction('NEXT')">■ FWD</button>
+                </div>
+            </div>
+
+            <div class="widget">
+                <div class="widget-title">SERVER STATUS</div>
+                <div class="server-status">
+                    <p>Uptime: 42 days, 6h, 12m</p>
+                    <p>Load: <span id="cpu-load">0.45</span></p>
+                    <p>OS: Arch Linux x86_64</p>
+                    <p>Status: <span class="status-online">ONLINE</span></p>
+                </div>
+            </div>
+
+            <div class="widget text-center">
+                <div class="widget-title">VISITORS</div>
+                <div class="counter-box">
+                    00042139
+                </div>
+                <p class="netscape-text">Optimizado para Netscape 4.0</p>
+            </div>
+
+            <!-- NUEVO WIDGET: MUNDO ASCII GIRATORIO -->
+            <div class="widget">
+                <div class="widget-title">GLOBAL_NET // MONITOR</div>
+                <div id="ascii-globe" class="globe-container"></div>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
