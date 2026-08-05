@@ -1,45 +1,77 @@
 /* =============================================================================
  *  v1ktoff // Webspace - Core Stylesheet
- *  Estética retro-arcade de 8 bits y terminal UNIX clásica.
+ *  Estética retro-arcade 8 bits / Cyber-terminal dinámica
+ *  Optimizado para Desktop y Dispositivos Móviles
  *  ============================================================================= */
 
-/* Importar fuente estilo 8-bits desde Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-/* Reset básico del navegador */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+:root {
+    /* Fondos */
+    --bg-main: #0a0c10;          /* Carbón profundo */
+    --bg-card: #10141d;          /* Azul noche oscuro */
+    --bg-nav: #0d1017;           /* Panel lateral */
+
+    /* Paleta Dinámica de Alto Contraste */
+    --term-green: #00ff66;       /* Verde fósforo activo (Texto principal y terminal) */
+    --term-cyan: #00e5ff;        /* Cian sintético (Títulos, links y prompts) */
+    --term-purple: #bf55ff;      /* Violeta neón (Headers de tarjetas y acentos) */
+    --term-magenta: #ff2a85;     /* Magenta/Rosa retro (Alertas, badges y hovers) */
+    --term-dim: #4e6375;         /* Comentarios / Metadatos tenues */
+}
+
 body {
-    background-color: #000000;
-    color: #ff0000; /* Verde terminal (#00ff00) o Ámbar (#ffb000) también quedan excelentes */
+    background-color: var(--bg-main);
+    color: var(--term-green);
     font-family: 'Press Start 2P', monospace;
     font-size: 11px;
     line-height: 1.6;
     padding: 20px;
+    overflow-x: hidden;
 }
 
-/* Encabezado y contenedor de Arte ASCII */
+/* EFECTO CRT SCANLINES (Capas de pantalla retro) */
+body::before {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(
+        rgba(18, 16, 16, 0) 50%,
+                                rgba(0, 0, 0, 0.25) 50%
+    );
+    background-size: 100% 4px;
+    z-index: 999;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+/* Encabezado y Arte ASCII con resplandor Cian */
 header {
     margin-bottom: 30px;
     text-align: center;
+    width: 100%;
+    overflow-x: auto; /* Permite scroll horizontal si el ASCII no cabe en pantallas muy estrechas */
 }
 
 .ascii-art {
-    font-family: monospace; /* Forzar monospace estándar para que no se deforme el logo */
+    font-family: monospace;
     font-size: 9px;
     line-height: 1.2;
     white-space: pre;
     display: inline-block;
     text-align: left;
-    color: #ff0000;
-    text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+    color: var(--term-cyan);
+    text-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
 }
 
-/* Contenedor Principal (Layout de 3 columnas estilo Web 1.0) */
+/* Contenedor Principal */
 .main-container {
     display: flex;
     gap: 20px;
@@ -52,17 +84,19 @@ header {
 nav {
     flex: 1;
     max-width: 220px;
-    border: 2px dashed #ff0000;
+    border: 2px dashed var(--term-cyan);
     padding: 15px;
-    background: #050000;
+    background: var(--bg-nav);
+    box-shadow: inset 0 0 10px rgba(0, 229, 255, 0.05);
 }
 
 nav h3 {
     font-size: 12px;
     margin-bottom: 15px;
     text-transform: uppercase;
-    border-bottom: 2px dashed #ff0000;
+    border-bottom: 2px dashed var(--term-cyan);
     padding-bottom: 5px;
+    color: var(--term-cyan);
 }
 
 nav ul {
@@ -74,69 +108,92 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #ff0000;
+    color: var(--term-green);
     text-decoration: none;
     display: block;
-    padding: 4px;
+    padding: 6px;
+    transition: all 0.1s ease;
 }
 
 nav ul li a:hover {
-    background-color: #ff0000;
-    color: #000000;
+    background-color: var(--term-cyan);
+    color: var(--bg-main);
+    font-weight: bold;
+}
+
+/* Estado del elemento de navegación activo */
+nav ul li a.active {
+    background-color: var(--term-cyan);
+    color: var(--bg-main);
+    font-weight: bold;
+    box-shadow: 2px 2px 0px var(--term-magenta);
+}
+
+nav ul li a.active::before {
+    content: "> ";
+    color: var(--term-magenta);
 }
 
 /* 2. ÁREA DE CONTENIDO CENTRAL (Main) */
 main {
     flex: 3;
-    border: 2px solid #ff0000;
+    border: 2px solid var(--term-cyan);
     padding: 20px;
     min-height: 500px;
-    background: #020000;
+    background: var(--bg-nav);
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.1);
+    word-break: break-word; /* Evita desbordamiento de textos o URLs largas */
 }
 
 main h2 {
     font-size: 14px;
     margin-bottom: 15px;
-    color: #ff0000;
+    color: var(--term-cyan);
+    text-shadow: 0 0 5px rgba(0, 229, 255, 0.3);
 }
 
-/* Estructura de Tarjetas (Cards) para Proyectos y Habilidades */
+/* Estructura de Tarjetas (Cards) */
 .project-card {
-    border: 2px solid #ff0000;
+    border: 2px solid var(--term-purple);
     margin-bottom: 20px;
-    background-color: #000000;
+    background-color: var(--bg-card);
+    box-shadow: 4px 4px 0px rgba(191, 85, 255, 0.2);
 }
 
 .project-header {
-    background-color: #ff0000;
-    color: #000000;
+    background-color: var(--term-purple);
+    color: #ffffff;
     padding: 6px 10px;
     font-weight: bold;
     font-size: 10px;
+    letter-spacing: 1px;
 }
 
 .project-body {
     padding: 15px;
+    color: var(--term-green);
 }
 
 .project-meta {
-    color: #880000;
+    color: var(--term-dim);
     font-size: 9px;
     margin-bottom: 10px;
 }
 
 .project-link {
-    color: #ff0000;
+    color: var(--term-cyan);
     text-decoration: none;
     font-size: 9px;
     display: inline-block;
     margin-top: 10px;
+    border: 1px solid var(--term-cyan);
+    padding: 4px 8px;
+    word-break: break-all;
 }
 
 .project-link:hover {
-    text-decoration: underline;
-    background-color: #ff0000;
-    color: #000000;
+    background-color: var(--term-cyan);
+    color: var(--bg-main);
 }
 
 /* 3. BARRA LATERAL DE WIDGETS (Derecha) */
@@ -149,38 +206,42 @@ aside {
 }
 
 .widget {
-    border: 2px solid #ff0000;
+    border: 2px solid var(--term-magenta);
     padding: 15px;
-    background: #050000;
+    background: var(--bg-nav);
+    box-shadow: 4px 4px 0px rgba(255, 42, 133, 0.15);
 }
 
 .widget-title {
     font-size: 10px;
-    background: #ff0000;
-    color: #000000;
-    padding: 3px 6px;
+    background: var(--term-magenta);
+    color: #ffffff;
+    padding: 4px 6px;
     margin-bottom: 10px;
     text-align: center;
+    font-weight: bold;
 }
 
 /* Globo ASCII Dinámico */
 .globe-container {
-    font-family: monospace; /* Obligatorio para preservar ancho estricto de caracteres */
+    font-family: monospace;
     font-size: 9px;
     line-height: 1;
     text-align: center;
     white-space: pre;
-    color: #ff0000;
-    filter: drop-shadow(0 0 3px rgba(255, 0, 0, 0.4));
+    color: var(--term-cyan);
+    filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.5));
     margin: 5px 0;
+    overflow-x: auto;
 }
 
 /* Reproductor Winamp Falso */
 .marquee-container {
-    border: 1px solid #ff0000;
+    border: 1px solid var(--term-magenta);
     padding: 4px;
-    background: #000000;
+    background: var(--bg-main);
     margin-bottom: 10px;
+    color: var(--term-green);
 }
 
 .marquee-container marquee {
@@ -195,9 +256,9 @@ aside {
 }
 
 .player-btn {
-    background: #000000;
-    color: #ff0000;
-    border: 1px solid #ff0000;
+    background: var(--bg-main);
+    color: var(--term-magenta);
+    border: 1px solid var(--term-magenta);
     font-family: 'Press Start 2P', monospace;
     font-size: 8px;
     padding: 6px;
@@ -206,12 +267,13 @@ aside {
 }
 
 .player-btn:hover {
-    background: #ff0000;
-    color: #000000;
+    background: var(--term-magenta);
+    color: #ffffff;
 }
 
 /* Utilidades adicionales */
 .blink {
+    color: var(--term-magenta);
     animation: step-end blink-animation 1s infinite;
 }
 
@@ -220,20 +282,117 @@ aside {
 }
 
 .status-online {
-    color: #ff0000;
+    color: var(--term-green);
+    text-shadow: 0 0 5px rgba(0, 255, 102, 0.6);
     animation: step-end blink-animation 1.5s infinite;
 }
 
 .text-center { text-align: center; }
+
 .counter-box {
     font-size: 16px;
-    border: 1px dashed #ff0000;
+    border: 1px dashed var(--term-magenta);
     padding: 8px;
     margin: 10px 0;
-    background: #000000;
+    background: var(--bg-main);
+    color: var(--term-magenta);
 }
+
 .netscape-text {
     font-size: 8px;
-    color: #550000;
+    color: var(--term-dim);
     margin-top: 5px;
+}
+
+/* Estilización retro de Scrollbars para mantener la estética */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--term-cyan);
+}
+
+/* =============================================================================
+ *  ADAPTACIÓN RESPONSIVE / MÓVILES (Media Queries)
+ *  ============================================================================= */
+
+@media (max-width: 900px) {
+    body {
+        padding: 10px;
+        font-size: 10px;
+    }
+
+    /* Redimensionado de Arte ASCII para evitar desbordes */
+    .ascii-art {
+        font-size: 6px;
+    }
+
+    /* Transformación a layout de 1 sola columna vertical */
+    .main-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    /* Menú superior responsive */
+    nav, aside {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    nav ul li {
+        margin-bottom: 0;
+        flex: 1 1 calc(50% - 6px); /* 2 botones por fila en móvil */
+    }
+
+    nav ul li a {
+        text-align: center;
+        padding: 8px 4px;
+        font-size: 9px;
+    }
+
+    main {
+        min-height: auto;
+        padding: 15px;
+    }
+
+    main h2 {
+        font-size: 12px;
+    }
+
+    .project-header {
+        font-size: 9px;
+    }
+
+    /* Ajuste de botones touch para reproductor */
+    .player-btn {
+        padding: 10px 4px;
+        font-size: 7px;
+    }
+
+    /* Tablas adaptables */
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .ascii-art {
+        font-size: 4.5px; /* Reducción extrema para pantallas pequeñas tipo smartphone */
+    }
+
+    nav ul li {
+        flex: 1 1 100%; /* 1 botón por fila en pantallas muy estrechas */
+    }
 }
